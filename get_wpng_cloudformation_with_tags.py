@@ -9,7 +9,7 @@ aws_command = "aws cloudformation describe-stacks --region us-east-1 --query 'St
 selected_tag_keys = ["appCode", "envName"]  # Add or remove tag keys as needed
 
 # Selected parameters
-selected_parameter_keys = ["EnvName", "ServiceName", "ComponentName", "MaxInstances", "MinInstances", "InstanceType", "AppVersion", "AMI"]  # add or remove parameters as needed
+selected_parameter_keys = ["EnvName", "ServiceName", "ComponentName", "MaxInstances", "MinInstances", "InstanceType", "AppVersion", "AMI", "InstanceName"]  # add or remove parameters as needed
 
 try:
 
@@ -22,7 +22,7 @@ try:
     ws = wb.active
 
     # Write header row
-    ws.append(["Stack Name", "Stack Status", "Creation Time", "appCode-TAG", "envName-TAG", "EnvName", "ServiceName", "ComponentName", "MaxInstances", "MinInstances", "InstanceType", "AppVersion", "AMI"])
+    ws.append(["Stack Name", "Stack Status", "Creation Time", "appCode-TAG", "envName-TAG", "EnvName", "ServiceName", "ComponentName", "MaxInstances", "MinInstances", "InstanceType", "AppVersion", "AMI", "InstanceName"])
     print("header written to cloudformation_stacks.xlsx successfully.")
 
     # Iterate over stacks and write data to Excel
